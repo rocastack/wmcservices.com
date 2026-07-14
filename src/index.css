@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Ultra Minimal SaaS Theme (AccessGrid Style) */
+  --color-primary: #000000;
+  --color-on-primary: #FFFFFF;
+  --color-secondary: #475569;
+  --color-accent: #CFA144;
+  /* Corporate Gold */
+  --color-on-accent: #001B3A;
+  --color-background: #FFFFFF;
+  /* Pure White */
+  --color-foreground: #000000;
+  --color-card: #FFFFFF;
+  --color-muted: #64748B;
+  --color-border: #E2E8F0;
+  --color-ring: #0D6EFD;
+
+  /* Brand/Corporate Colors from App.css */
+  --color-navy: #001B3A;
+  --color-navy-dark: #000E20;
+  --color-navy-darker: #000c1c;
+  --color-gold: #CFA144;
+  --color-gold-dark: #b58936;
+  --color-gold-light: #fef3c7;
+
+  /* Additional UI Colors */
+  --color-accent-hover: #b58936;
+  --color-border-hover: #CBD5E1;
+  --color-border-light: #dce0e5;
+  --color-gray-900: #111827;
+  /* Dark text/borders */
+  --color-gray-400: #94a3b8;
+  /* Status text */
+  --color-gray-50: #f9fafb;
+  /* Phone bg */
+  --color-text-light: #e5e7eb;
+  --color-success: #22c55e;
+  --color-danger: #ef4444;
+
+  /* Typography */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+html,
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-family);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-foreground);
+  letter-spacing: -0.04em;
+  /* Tight letter spacing for massive headers */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  outline: none;
+}
+
+/* Glassmorphism for Navbar */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  /* Tighter max width for SaaS feel */
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.center {
+  text-align: center;
+}
