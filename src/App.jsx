@@ -1071,15 +1071,15 @@ function App() {
                 </p>
                 <div className="saas-row">
                   <div className="saas-input-group">
-                    <input type="text" required placeholder={t.modal.phName} className="saas-input" />
+                    <input type="text" name="name" required placeholder={t.modal.phName} className="saas-input" />
                   </div>
                   <div className="saas-input-group">
-                    <input type="tel" required placeholder={t.modal.phPhone} className="saas-input" />
+                    <input type="tel" name="phone" required placeholder={t.modal.phPhone} className="saas-input" />
                   </div>
                 </div>
 
                 <div className="saas-input-group">
-                  <select required className="saas-input" defaultValue="" style={{ appearance: 'auto' }}>
+                  <select name="availability" required className="saas-input" defaultValue="" style={{ appearance: 'auto' }}>
                     <option value="" disabled>{t.modal.selAvailability}</option>
                     <option value="manana">{t.modal.optMorning}</option>
                     <option value="tarde">{t.modal.optAfternoon}</option>
