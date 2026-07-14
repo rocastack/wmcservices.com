@@ -283,6 +283,11 @@ const translations = {
       optAfternoon: "Tarde",
       optNight: "Nocturno",
       optFullTime: "Tiempo Completo",
+      optAnyShift: "Cualquier Turno",
+      langLabel: "Idiomas (Opcional)",
+      langEnglish: "Inglés",
+      langFrench: "Francés",
+      langPortuguese: "Portugués",
       phLinkedin: "Link de LinkedIn (Opcional)",
       phPortfolio: "Link de portafolio (Opcional)",
       dropzoneFile: "Arrastra tu CV en PDF aquí o haz clic para subir",
@@ -403,6 +408,11 @@ const translations = {
       optAfternoon: "Afternoon",
       optNight: "Night",
       optFullTime: "Full Time",
+      optAnyShift: "Any Shift",
+      langLabel: "Languages (Optional)",
+      langEnglish: "English",
+      langFrench: "French",
+      langPortuguese: "Portuguese",
       phLinkedin: "LinkedIn Link (Optional)",
       phPortfolio: "Portfolio Link (Optional)",
       dropzoneFile: "Drop your PDF CV here or click to upload",
@@ -575,7 +585,40 @@ function App() {
   const handleContactSubmit = (e) => {
     e.preventDefault();
     setFormState('submitting');
-    setTimeout(() => setFormState('success'), 1500);
+    const formData = new FormData(e.target);
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
+    })
+      .then(() => setFormState('success'))
+      .catch((error) => {
+        console.error(error);
+        setFormState('idle');
+      });
+  };
+
+  const handleCareersSubmit = (e) => {
+    e.preventDefault();
+    setFormState('submitting');
+    const formData = new FormData(e.target);
+    // Para archivos necesitamos fetch multipart estándar sin cambiar headers
+    fetch('/', {
+      method: 'POST',
+      body: formData
+    })
+      .then(() => {
+        setFormState('success');
+        setTimeout(() => {
+          setIsModalOpen(false);
+          setFormState('idle');
+          setUploadedFileName("");
+        }, 2000);
+      })
+      .catch((error) => {
+        console.error(error);
+        setFormState('idle');
+      });
   };
 
   const toggleLang = () => {
@@ -866,31 +909,37 @@ function App() {
             <div className="contact-form-container">
               <motion.form
                 key="commercial"
+                name="contact"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 onSubmit={handleContactSubmit}
                 className="saas-form"
               >
+                <input type="hidden" name="form-name" value="contact" />
+                <p className="hidden" style={{ display: 'none' }}>
+                  <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+                </p>
                 <div className="saas-row">
                   <div className="saas-input-group">
-                    <input type="text" required placeholder={t.contact.phCompany} className="saas-input" />
+                    <input type="text" name="company" required placeholder={t.contact.phCompany} className="saas-input" />
                   </div>
                   <div className="saas-input-group">
-                    <input type="text" required placeholder={t.contact.phName} className="saas-input" />
+                    <input type="text" name="name" required placeholder={t.contact.phName} className="saas-input" />
                   </div>
                 </div>
                 <div className="saas-row">
                   <div className="saas-input-group">
-                    <input type="tel" required placeholder={t.contact.phPhone} className="saas-input" />
+                    <input type="tel" name="phone" required placeholder={t.contact.phPhone} className="saas-input" />
                   </div>
                   <div className="saas-input-group">
-                    <input type="email" required placeholder={t.contact.phEmail} className="saas-input" />
+                    <input type="email" name="email" required placeholder={t.contact.phEmail} className="saas-input" />
                   </div>
                 </div>
-
                 <div className="saas-input-group">
-                  <select required className="saas-input" defaultValue="" style={{ appearance: 'auto' }}>
+                  <select name="service" required className="saas-input" defaultValue="" style={{ appearance: 'auto' }}>
                     <option value="" disabled>{t.contact.selService}</option>
                     <option value="contact_center">{t.contact.optContactCenter}</option>
                     <option value="call_center">{t.contact.optCallCenter}</option>
@@ -900,7 +949,7 @@ function App() {
                 </div>
 
                 <div className="saas-input-group">
-                  <select required className="saas-input" defaultValue="" style={{ appearance: 'auto' }}>
+                  <select name="stations" required className="saas-input" defaultValue="" style={{ appearance: 'auto' }}>
                     <option value="" disabled>{t.contact.selStations}</option>
                     <option value="1_5">{t.contact.opt1_5}</option>
                     <option value="6_15">{t.contact.opt6_15}</option>
@@ -1015,7 +1064,11 @@ function App() {
               <h3 className="modal-title">{t.modal.title}</h3>
               <p className="modal-subtitle">{t.modal.subtitle}</p>
 
-              <form onSubmit={handleContactSubmit} className="saas-form modal-form">
+              <form name="careers" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={handleCareersSubmit} className="saas-form modal-form">
+                <input type="hidden" name="form-name" value="careers" />
+                <p className="hidden" style={{ display: 'none' }}>
+                  <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+                </p>
                 <div className="saas-row">
                   <div className="saas-input-group">
                     <input type="text" required placeholder={t.modal.phName} className="saas-input" />
@@ -1032,15 +1085,37 @@ function App() {
                     <option value="tarde">{t.modal.optAfternoon}</option>
                     <option value="nocturno">{t.modal.optNight}</option>
                     <option value="tiempo_completo">{t.modal.optFullTime}</option>
+                    <option value="cualquier_turno">{t.modal.optAnyShift}</option>
                   </select>
+                </div>
+
+                <div className="saas-input-group">
+                  <label className="checkbox-group-label">{t.modal.langLabel}</label>
+                  <div className="checkbox-group">
+                    <label className="checkbox-item">
+                      <input type="checkbox" name="lang" value="english" />
+                      <span className="checkbox-custom"></span>
+                      {t.modal.langEnglish}
+                    </label>
+                    <label className="checkbox-item">
+                      <input type="checkbox" name="lang" value="french" />
+                      <span className="checkbox-custom"></span>
+                      {t.modal.langFrench}
+                    </label>
+                    <label className="checkbox-item">
+                      <input type="checkbox" name="lang" value="portuguese" />
+                      <span className="checkbox-custom"></span>
+                      {t.modal.langPortuguese}
+                    </label>
+                  </div>
                 </div>
 
                 <div className="saas-row">
                   <div className="saas-input-group">
-                    <input type="url" placeholder={t.modal.phLinkedin} className="saas-input" />
+                    <input type="url" name="linkedin" placeholder={t.modal.phLinkedin} className="saas-input" />
                   </div>
                   <div className="saas-input-group">
-                    <input type="url" placeholder={t.modal.phPortfolio} className="saas-input" />
+                    <input type="url" name="portfolio" placeholder={t.modal.phPortfolio} className="saas-input" />
                   </div>
                 </div>
 
@@ -1057,7 +1132,7 @@ function App() {
                   }}
                   onClick={() => document.getElementById('cv-upload-modal').click()}
                 >
-                  <input type="file" id="cv-upload-modal" accept=".pdf" className="hidden-input" onChange={(e) => {
+                  <input type="file" name="cv" id="cv-upload-modal" accept=".pdf" className="hidden-input" onChange={(e) => {
                     if (e.target.files && e.target.files[0]) setUploadedFileName(e.target.files[0].name);
                   }} />
                   <UploadCloud size={28} className="dropzone-icon" />
