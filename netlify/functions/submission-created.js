@@ -1,6 +1,6 @@
-const nodemailer = require('nodemailer');
+import nodemailer from 'nodemailer';
 
-exports.handler = async function (event, context) {
+export const handler = async function (event, context) {
   // Solo queremos procesar solicitudes POST que vengan de Netlify Forms
   if (event.httpMethod !== "POST") {
     return { statusCode: 405, body: "Method Not Allowed" };
@@ -54,7 +54,7 @@ exports.handler = async function (event, context) {
     };
 
     if (form_name === 'careers') {
-      subject = `[WMC] Nuevo Currículum Recibido: ${data.name || 'Candidato'}`;
+      subject = `NUEVO EMPLEADO POTENCIAL - WMC ${data.name || 'Candidato'}`;
       const cvUrl = getFileUrl(data.cv);
 
       htmlContent = `
