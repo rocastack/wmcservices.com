@@ -54,3 +54,9 @@ El proyecto está construido bajo una arquitectura moderna orientada a la altís
 *   **CSS Vanilla Avanzado:** Sistema de estilos sin dependencias, utilizando `clamp()` para tipografías fluidas, variables CSS dinámicas y Flexbox/Grid moderno.
 
 ---
+
+<div align="center">
+  <strong>PRIMER PROYECTO DE ROCASTACK</strong>
+  <br />
+  <em>Julio 2026</em>
+</div>
