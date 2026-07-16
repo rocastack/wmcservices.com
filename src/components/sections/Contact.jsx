@@ -72,7 +72,6 @@ export const Contact = ({ t, formState, handleContactSubmit, setIsModalOpen }) =
                   <option value="contact_center">{t.contact.optContactCenter}</option>
                   <option value="call_center">{t.contact.optCallCenter}</option>
                   <option value="telemarketing">{t.contact.optTelemarketing}</option>
-                  <option value="otro">{t.contact.optOther}</option>
                 </select>
               </div>
 
@@ -151,7 +150,7 @@ export const Contact = ({ t, formState, handleContactSubmit, setIsModalOpen }) =
           </div>
         </motion.div>
       </div>
-      
+
       <Banner t={t} setIsModalOpen={setIsModalOpen} />
     </footer>
   );

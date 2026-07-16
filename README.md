@@ -1,5 +1,3 @@
----
-
 # 🏢 WMC Services — BPO & Contact Center de Próxima Generación
 
 [![React](https://img.shields.io/badge/React-18.x-blue?style=for-the-badge&logo=react)](https://react.dev/)

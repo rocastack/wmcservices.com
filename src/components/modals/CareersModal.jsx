@@ -45,15 +45,26 @@ export const CareersModal = ({
                 </div>
               </div>
 
-              <div className="saas-input-group">
-                <select name="availability" required className="saas-input" defaultValue="" style={{ appearance: 'auto' }}>
-                  <option value="" disabled>{t.modal.selAvailability}</option>
-                  <option value="manana">{t.modal.optMorning}</option>
-                  <option value="tarde">{t.modal.optAfternoon}</option>
-                  <option value="nocturno">{t.modal.optNight}</option>
-                  <option value="tiempo_completo">{t.modal.optFullTime}</option>
-                  <option value="cualquier_turno">{t.modal.optAnyShift}</option>
-                </select>
+              <div className="saas-row">
+                <div className="saas-input-group">
+                  <select name="area" required className="saas-input" defaultValue="" style={{ appearance: 'auto' }}>
+                    <option value="" disabled>{t.modal.selArea}</option>
+                    <option value="bpo">{t.modal.optBpo}</option>
+                    <option value="atencion_cliente">{t.modal.optCustomer}</option>
+                    <option value="cobranza">{t.modal.optCollection}</option>
+                    <option value="telemarketing">{t.modal.optTelemarketing}</option>
+                  </select>
+                </div>
+                <div className="saas-input-group">
+                  <select name="availability" required className="saas-input" defaultValue="" style={{ appearance: 'auto' }}>
+                    <option value="" disabled>{t.modal.selAvailability}</option>
+                    <option value="manana">{t.modal.optMorning}</option>
+                    <option value="tarde">{t.modal.optAfternoon}</option>
+                    <option value="nocturno">{t.modal.optNight}</option>
+                    <option value="tiempo_completo">{t.modal.optFullTime}</option>
+                    <option value="cualquier_turno">{t.modal.optAnyShift}</option>
+                  </select>
+                </div>
               </div>
 
               <div className="saas-input-group">
@@ -73,6 +84,11 @@ export const CareersModal = ({
                     <input type="checkbox" name="lang" value="portuguese" />
                     <span className="checkbox-custom"></span>
                     {t.modal.langPortuguese}
+                  </label>
+                  <label className="checkbox-item">
+                    <input type="checkbox" name="lang" value="otro" />
+                    <span className="checkbox-custom"></span>
+                    {t.modal.langOther}
                   </label>
                 </div>
               </div>

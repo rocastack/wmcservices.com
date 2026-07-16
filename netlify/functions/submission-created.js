@@ -71,6 +71,7 @@ export const handler = async function (event, context) {
               <table class="data-table">
                 <tr><th>Nombre</th><td>${formatValue(data.name)}</td></tr>
                 <tr><th>Teléfono</th><td>${formatValue(data.phone)}</td></tr>
+                <tr><th>Área de Interés</th><td>${formatValue(data.area)}</td></tr>
                 <tr><th>Disponibilidad</th><td>${formatValue(data.availability)}</td></tr>
                 <tr><th>Idiomas</th><td>${formatValue(data.lang)}</td></tr>
                 <tr><th>LinkedIn</th><td>${data.linkedin ? `<a href="${data.linkedin}">${data.linkedin}</a>` : '-'}</td></tr>

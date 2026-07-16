@@ -1907,6 +1907,7 @@
   border: none;
   padding: 1rem;
   border-radius: 12px;
+  width: 100%;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 1rem;
@@ -2052,6 +2053,11 @@
 @media (max-width: 768px) {
   .saas-row {
     grid-template-columns: 1fr;
+  }
+  
+  .contact-interaction-panel,
+  .contact-info-glass-panel {
+    padding: 1.5rem 1rem;
   }
 }
 
