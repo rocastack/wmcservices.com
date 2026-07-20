@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+# Sitemap: https://[DOMINIO_DEL_CLIENTE]/sitemap.xml

@@ -18,11 +18,11 @@ export const Navbar = ({
       <nav className={`pill-navbar ${isScrolled ? 'glass-nav scrolled' : 'transparent-nav'}`} style={{ position: 'relative' }}>
         {/* Corner Logo (Bigger, aligned with margin) */}
         <div className={`nav-logo corner-logo ${isScrolled ? 'hidden' : ''}`} onClick={scrollToTop} style={{ cursor: 'pointer' }}>
-          <img src="/logo.webp" alt="WMC Logo" className="logo-img hero-logo-size" />
+          <img src="/logo.webp" alt="WMC Logo" className="logo-img hero-logo-size" width="70" height="70" />
         </div>
 
         <div className={`nav-logo ${!isScrolled ? 'invisible' : ''}`} onClick={scrollToTop} style={{ cursor: 'pointer' }}>
-          <img src="/logo.webp" alt="WMC Logo" className="logo-img" style={{ height: '32px', width: 'auto' }} />
+          <img src="/logo.webp" alt="WMC Logo" className="logo-img" style={{ height: '32px', width: 'auto' }} width="32" height="32" />
         </div>
 
         <ul className="nav-links">
@@ -37,9 +37,9 @@ export const Navbar = ({
         </div>
 
         <button
-          className={`mobile-menu-btn ${!isScrolled ? 'text-white' : ''}`}
-          onClick={() => setIsMobileMenuOpen(true)}
-          aria-label="Open menu"
+          className={`mobile-menu-btn ${isMobileMenuOpen ? 'open' : ''} ${!isScrolled ? 'light-mode' : ''}`}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
         >
           <Menu size={24} />
         </button>
@@ -52,12 +52,12 @@ export const Navbar = ({
           {/* Header of mobile menu */}
           <div className="mobile-menu-header">
             <div className="nav-logo" onClick={scrollToTop} style={{ cursor: 'pointer' }}>
-              <img src="/logo.webp" alt="WMC Logo" className="logo-img" style={{ height: '32px', width: 'auto' }} />
+              <img src="/logo.webp" alt="WMC Logo" className="logo-img" style={{ height: '32px', width: 'auto' }} width="32" height="32" />
             </div>
             <button
               className="mobile-close-btn"
               onClick={() => setIsMobileMenuOpen(false)}
-              aria-label="Close menu"
+              aria-label="Cerrar menú"
             >
               <X size={20} />
             </button>

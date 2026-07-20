@@ -52,15 +52,15 @@ export const Contact = ({ t, formState, handleContactSubmit, setIsModalOpen }) =
               </p>
               <div className="saas-row">
                 <div className="saas-input-group">
-                  <input type="text" name="company" required placeholder={t.contact.phCompany} className="saas-input" />
+                  <input type="text" name="company" required placeholder={t.contact.phCompany} className="saas-input" maxLength="50" />
                 </div>
                 <div className="saas-input-group">
-                  <input type="text" name="name" required placeholder={t.contact.phName} className="saas-input" />
+                  <input type="text" name="name" required placeholder={t.contact.phName} className="saas-input" pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$" maxLength="25" title="Solo letras permitidas (máx. 25 caracteres)" />
                 </div>
               </div>
               <div className="saas-row">
                 <div className="saas-input-group">
-                  <input type="tel" name="phone" required placeholder={t.contact.phPhone} className="saas-input" />
+                  <input type="tel" name="phone" required placeholder={t.contact.phPhone} className="saas-input" pattern="^[0-9+\s\-]+$" title="Solo números y símbolos telefónicos (+ o -)" />
                 </div>
                 <div className="saas-input-group">
                   <input type="email" name="email" required placeholder={t.contact.phEmail} className="saas-input" />

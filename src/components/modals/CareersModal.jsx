@@ -25,7 +25,7 @@ export const CareersModal = ({
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           >
-            <button className="modal-close-btn" onClick={() => setIsModalOpen(false)}>
+            <button className="modal-close-btn" onClick={() => setIsModalOpen(false)} aria-label="Cerrar modal">
               <X size={24} />
             </button>
             <h3 className="modal-title">{t.modal.title}</h3>
@@ -38,10 +38,10 @@ export const CareersModal = ({
               </p>
               <div className="saas-row">
                 <div className="saas-input-group">
-                  <input type="text" name="name" required placeholder={t.modal.phName} className="saas-input" />
+                  <input type="text" name="name" required placeholder={t.modal.phName} className="saas-input" pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$" maxLength="25" title="Solo letras permitidas (máx. 25 caracteres)" />
                 </div>
                 <div className="saas-input-group">
-                  <input type="tel" name="phone" required placeholder={t.modal.phPhone} className="saas-input" />
+                  <input type="tel" name="phone" required placeholder={t.modal.phPhone} className="saas-input" pattern="^[0-9+\s\-]+$" title="Solo números y símbolos telefónicos (+ o -)" />
                 </div>
               </div>
 

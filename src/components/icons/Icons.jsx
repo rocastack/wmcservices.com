@@ -39,7 +39,7 @@ export const WhatsappIcon = ({ size = 28 }) => (
 );
 
 export const Facebook3DIcon = () => (
-  <a className="social-3d-icon social-3d-fb" href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+  <a className="social-3d-icon social-3d-fb" href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Visitar nuestro perfil de Facebook">
     <div className="layer">
       <span />
       <span />
@@ -61,7 +61,7 @@ export const Facebook3DIcon = () => (
 );
 
 export const LinkedIn3DIcon = () => (
-  <a className="social-3d-icon social-3d-in" href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+  <a className="social-3d-icon social-3d-in" href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Visitar nuestro perfil de LinkedIn">
     <div className="layer">
       <span />
       <span />
@@ -78,7 +78,7 @@ export const LinkedIn3DIcon = () => (
 );
 
 export const Instagram3DIcon = () => (
-  <a className="social-3d-icon social-3d-ig" href="https://www.instagram.com/wmcworldservice?igsh=NmY5eXJ4OHN3cnN1" target="_blank" rel="noopener noreferrer">
+  <a className="social-3d-icon social-3d-ig" href="https://www.instagram.com/wmcworldservice?igsh=NmY5eXJ4OHN3cnN1" target="_blank" rel="noopener noreferrer" aria-label="Visitar nuestro perfil de Instagram">
     <div className="layer">
       <span />
       <span />

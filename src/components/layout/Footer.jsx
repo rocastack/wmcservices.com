@@ -9,7 +9,7 @@ export const Footer = ({ t, handleNavClick, setIsModalOpen }) => {
         {/* Columna 1: Branding e Identidad */}
         <div className="footer-brand-column">
           <div className="footer-logo-wrapper">
-            <img src="/logo.webp" alt="WMC Logo" className="footer-mini-logo" />
+            <img src="/logo.webp" alt="WMC Logo" className="footer-mini-logo" width="32" height="32" loading="lazy" />
             <span className="footer-brand-name">WMC SERVICES</span>
           </div>
           <p className="footer-brand-desc">

@@ -98,7 +98,7 @@ export const translations = {
       btnSuccess: "¡Solicitud Recibida!",
       hqTag: "Sede Central",
       hqTitle: "WMC Services HQs",
-      hqAddress: "Avenida 23 de Enero, Centro Comercial Fiat, Piso 1 (frente al Parque La Federación),<br />Barinas, Venezuela.",
+      hqAddress: "Avenida 23 de Enero, Centro Comercial Fiat, Piso 1 ,<br />Barinas, Venezuela.",
       salesSupport: "Ventas y Soporte"
     },
     modal: {
@@ -228,7 +228,7 @@ export const translations = {
       btnSuccess: "Request Received!",
       hqTag: "Headquarters",
       hqTitle: "WMC Services HQs",
-      hqAddress: "23 de Enero Avenue, Fiat Shopping Center, 1st Floor (in front of La Federación Park),<br />Barinas, Venezuela.",
+      hqAddress: "23 de Enero Avenue, Fiat Shopping Center, 1st Floor, Barinas, Venezuela.",
       salesSupport: "Sales & Support"
     },
     modal: {

@@ -25,7 +25,7 @@ export const Profile = ({ t }) => {
         className="profile-layout"
       >
         <motion.div variants={fadeUpVariant} className="profile-image-wrapper saas-shadow">
-          <img src="/1.webp" alt="WMC Office Environment" className="profile-image" />
+          <img src="/1.webp" alt="WMC Office Environment" className="profile-image" width="364" height="455" loading="lazy" />
         </motion.div>
         <motion.div variants={fadeUpVariant} className="profile-text">
           <div className="section-header">
