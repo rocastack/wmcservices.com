@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Formularios Ocultos Netlify</title>
+  </head>
+  <body>
+    <!-- Formulario de Contacto -->
+    <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field">
+      <input type="text" name="bot-field" />
+      <input type="text" name="company" />
+      <input type="text" name="name" />
+      <input type="text" name="phone" />
+      <input type="email" name="email" />
+      <input type="text" name="service" />
+      <input type="text" name="stations" />
+      <button type="submit">Enviar</button>
+    </form>
+
+    <!-- Formulario de Empleos -->
+    <form name="careers" data-netlify="true" data-netlify-honeypot="bot-field" enctype="multipart/form-data">
+      <input type="text" name="bot-field" />
+      <input type="text" name="name" />
+      <input type="text" name="phone" />
+      <input type="text" name="availability" />
+      <input type="text" name="lang" />
+      <input type="text" name="linkedin" />
+      <input type="text" name="portfolio" />
+      <input type="file" name="cv" />
+      <button type="submit">Enviar</button>
+    </form>
+  </body>
+</html>
