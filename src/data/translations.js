@@ -97,7 +97,7 @@ export const translations = {
       btnLoading: "Procesando...",
       btnSuccess: "¡Solicitud Recibida!",
       hqTag: "Sede Central",
-      hqTitle: "WMC Services HQs",
+      hqTitle: "WMC Services",
       hqAddress: "Avenida 23 de Enero, Centro Comercial Fiat, Piso 1 ,<br />Barinas, Venezuela.",
       salesSupport: "Ventas y Soporte"
     },
@@ -227,7 +227,7 @@ export const translations = {
       btnLoading: "Processing...",
       btnSuccess: "Request Received!",
       hqTag: "Headquarters",
-      hqTitle: "WMC Services HQs",
+      hqTitle: "WMC Services",
       hqAddress: "23 de Enero Avenue, Fiat Shopping Center, 1st Floor, Barinas, Venezuela.",
       salesSupport: "Sales & Support"
     },
