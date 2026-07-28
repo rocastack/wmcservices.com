@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 const fadeUpVariant = {
@@ -12,12 +12,25 @@ const staggerContainer = {
 };
 
 export const Hero = ({ t, handleNavClick }) => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      // Force play for iOS Safari
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      videoRef.current.play().catch((e) => console.log('Video autoplay failed:', e));
+    }
+  }, []);
+
   return (
     <header className="hero jadoo-layout">
       <video
+        ref={videoRef}
         autoPlay
         loop
         muted
+        defaultMuted
         playsInline
         className="hero-video-bg"
       >
